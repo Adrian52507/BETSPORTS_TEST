@@ -1,0 +1,38 @@
+html {
+  background-color: black;
+  overflow: hidden;
+  font-size: 10px;
+}
+
+body {
+  font-size: x-large;
+  font-family: courier new, monospace;
+  color: #1ce300;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+svg {
+  width: 15rem;
+  height: auto; /* mantiene proporción */
+}
+
+
+.titulo {
+  margin-top: 1.8rem;
+  font-size: 2rem;
+}
+
+/* Ocultar todos los paths inicialmente */
+svg path {
+  display: none;
+}
+
+/* Mostrar solo el path inicial */
+#futbol {
+  display: inline;
+}
