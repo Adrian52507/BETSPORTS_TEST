@@ -8,10 +8,10 @@ let tl = gsap.timeline({ repeat: 0, yoyo: false, paused: true });
 let audio_swoosh = document.getElementById("titulo-sonido");
 let audio_comenzar = document.getElementById("comenzar-sonido");
 let audio_coin = document.getElementById("moneda-sonido");
-
+  
 // 1. Efecto de entrada para la pelota de fútbol
 tl.from("#futbol", {
-  duration: 1.1,
+  duration: 1,
   scale: 0,         // empieza pequeño
   opacity: 0,       // invisible
   transformOrigin: "50% 50%", // centro del svg
@@ -24,7 +24,7 @@ tl.from("#futbol", {
 
 // 2. Morph a tennis
 tl.to("#futbol", {
-  duration: 1.1,
+  duration: 1,
   morphSVG: "#tennis",
   ease: "power2.inOut",
   onStart: () => {
@@ -35,7 +35,7 @@ tl.to("#futbol", {
 
 // 3. Morph a banca
 tl.to("#futbol", {
-  duration: 1.1,
+  duration: 1,
   morphSVG: "#banca",
   ease: "power2.inOut",
   onStart: () => {
@@ -46,7 +46,7 @@ tl.to("#futbol", {
 
 // 4. Morph a basquet
 tl.to("#futbol", {
-  duration: 1.1,
+  duration: 1,
   morphSVG: "#basquet",
   ease: "power2.inOut",
   onStart: () => {
@@ -57,29 +57,17 @@ tl.to("#futbol", {
 
 // 5. Morph a mancuerna
 tl.to("#futbol", {
-  duration: 1.1,
+  duration: 1,
   morphSVG: "#mancuerna",
   ease: "power2.inOut",
   onStart: () => {
-    audio_swoosh.currentTime = 0;
-    audio_swoosh.play();
+    audio_coin.currentTime = 0;
+    audio_coin.play();
   },
   onComplete: () => {
-    audio_swoosh.pause();
     // mostrar el texto BET-SPORTS al terminar
-    
-  }
-});
-// 6. Morph final
-tl.to("#futbol", {
-  onStart: () => {
-    gsap.to(".titulo", {
-      opacity: 1, 
-      duration: 1.5, 
-      onStart: () => {
-        audio_coin.currentTime = 0;
-        audio_coin.play();
-    }});
+    gsap.to(".titulo", { opacity: 1, duration: 1.5 });
+    audio_coin.play();
   }
 });
 
