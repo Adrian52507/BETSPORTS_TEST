@@ -23,6 +23,7 @@ svg {
 
 
 .titulo {
+  display: none;
   font-size: 2rem;
 }
 
@@ -31,7 +32,29 @@ svg path {
   display: none;
 }
 
-/* Mostrar solo el path inicial */
-#futbol {
+/* Mostrar solo el boton */
+#boton path {
+  cursor: pointer;
   display: inline;
+  transform-origin: center;
+  animation: latido 1s ease-in-out infinite;
+}
+
+@keyframes latido {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+#boton #boton_fondo:hover {
+  fill: black; /* color al hacer hover */
+  stroke-width: 0.2;
+  stroke: white;
+}
+
+#boton #boton_fondo:hover ~ #boton_letras path{
+  fill: white;
 }
