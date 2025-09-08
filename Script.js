@@ -66,7 +66,8 @@ tl.to("#futbol", {
   },
   onComplete: () => {
     // mostrar el texto BET-SPORTS al terminar
-    gsap.to(".titulo", { opacity: 1, duration: 1 });
+    gsap.to(".titulo", { opacity: 1, duration: 0.8 });
+    audio_swoosh.pause();
     audio_coin.currentTime = 0;
     audio_coin.play();
   }
