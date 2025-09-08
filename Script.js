@@ -67,14 +67,19 @@ tl.to("#futbol", {
   onComplete: () => {
     audio_swoosh.pause();
     // mostrar el texto BET-SPORTS al terminar
+    
+  }
+});
+// 6. Morph final
+tl.to("#futbol", {
+  onStart: () => {
     gsap.to(".titulo", {
       opacity: 1, 
-      duration: 5, 
+      duration: 1.5, 
       onStart: () => {
-        audio_comenzar.currentTime = 0;
-        audio_comenzar.play();
-      }
-    });
+        audio_coin.currentTime = 0;
+        audio_coin.play();
+    }});
   }
 });
 
