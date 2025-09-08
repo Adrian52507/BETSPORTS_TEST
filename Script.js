@@ -11,7 +11,7 @@ let audio_coin = document.getElementById("moneda-sonido");
   
 // 1. Efecto de entrada para la pelota de fútbol
 tl.from("#futbol", {
-  duration: 0.8,
+  duration: 1,
   scale: 0,         // empieza pequeño
   opacity: 0,       // invisible
   transformOrigin: "50% 50%", // centro del svg
@@ -24,7 +24,7 @@ tl.from("#futbol", {
 
 // 2. Morph a tennis
 tl.to("#futbol", {
-  duration: 0.8,
+  duration: 1,
   morphSVG: "#tennis",
   ease: "power2.inOut",
   onStart: () => {
@@ -35,7 +35,7 @@ tl.to("#futbol", {
 
 // 3. Morph a banca
 tl.to("#futbol", {
-  duration: 0.8,
+  duration: 1,
   morphSVG: "#banca",
   ease: "power2.inOut",
   onStart: () => {
@@ -46,7 +46,7 @@ tl.to("#futbol", {
 
 // 4. Morph a basquet
 tl.to("#futbol", {
-  duration: 0.8,
+  duration: 1,
   morphSVG: "#basquet",
   ease: "power2.inOut",
   onStart: () => {
@@ -57,7 +57,7 @@ tl.to("#futbol", {
 
 // 5. Morph a mancuerna
 tl.to("#futbol", {
-  duration: 0.8,
+  duration: 1,
   morphSVG: "#mancuerna",
   ease: "power2.inOut",
   onStart: () => {
