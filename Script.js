@@ -65,9 +65,6 @@ tl.to("#futbol", {
     audio_swoosh.play();
   },
   onComplete: () => {   
-    audio_comenzar.pause(); 
-    audio_coin.currentTime = 0;
-    audio_coin.play();
     // mostrar el texto BET-SPORTS al terminar
     gsap.to(".titulo", { opacity: 1, duration: 1.5 });
 
@@ -75,7 +72,10 @@ tl.to("#futbol", {
 });
 
 document.getElementById("boton").addEventListener("click", () => {
-  // Ocultar el botón con animación
+  audio_coin.currentTime = 0;
+  setTimeout(() => {
+    audio_coin.play();
+  }, 5000);
   gsap.to("#boton", {
     opacity: 0,
     scale: 1,
