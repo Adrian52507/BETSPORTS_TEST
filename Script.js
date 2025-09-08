@@ -8,7 +8,7 @@ let tl = gsap.timeline({ repeat: 0, yoyo: false, paused: true });
 let audio_swoosh = document.getElementById("titulo-sonido");
 let audio_comenzar = document.getElementById("comenzar-sonido");
 let audio_coin = document.getElementById("moneda-sonido");
-  
+
 // 1. Efecto de entrada para la pelota de fútbol
 tl.from("#futbol", {
   duration: 1.1,
@@ -66,10 +66,15 @@ tl.to("#futbol", {
   },
   onComplete: () => {
     // mostrar el texto BET-SPORTS al terminar
-    gsap.to(".titulo", { opacity: 1, duration: 0.8 });
-    audio_swoosh.pause();
-    audio_coin.currentTime = 0;
-    audio_coin.play();
+    gsap.to(".titulo", {
+      opacity: 1, 
+      duration: 0.8, 
+      onStart: () => {
+        audio_swoosh.pause();
+        audio_coin.currentTime = 0;
+        audio_coin.play();
+      }
+    });
   }
 });
 
