@@ -72,6 +72,7 @@ tl.to("#futbol", {
       duration: 5, 
       onStart: () => {
         audio_coin.currentTime = 0;
+        audio_coin.volume = 1.0; // Asegura volumen máximo
         audio_coin.play();
       }
     });
